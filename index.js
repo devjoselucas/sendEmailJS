@@ -29,7 +29,7 @@ navigator.geolocation.getCurrentPosition(success, error, options);
 
 function sendEmail() {
 
-console.log(`${coordenadas[0]} ${coordenadas[1]}`);
+  console.log(`${coordenadas[0]} ${coordenadas[1]}`);
 
   Email.send({
       SecureToken : "b562e5cb-b2a8-4ad3-b65c-a466112eeca7",
