@@ -1,6 +1,13 @@
 function sendEmail() {
 
-  navigator.geolocation.getCurrentPosition(console.log,console.log);
+  const sucessfulLookUp = (position) => {
+    const {latitude, longitude} = position.coords;
+    fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=a0a250da0a8e469c9184ed2cf28013da`)
+    .then(response => response.json())
+    .then(console.log);
+  };
+
+  navigator.geolocation.getCurrentPosition(sucessfulLookUp,console.log);
 
   Email.send({
       SecureToken : "b562e5cb-b2a8-4ad3-b65c-a466112eeca7",
